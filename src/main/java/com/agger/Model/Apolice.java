@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "apolice")
 @Getter
@@ -19,6 +21,8 @@ public class Apolice {
     private String id;
 
     private String number;
+
+    private LocalDateTime dateTime;
 
     @ManyToOne
     @JoinColumn(name = "client_id", nullable = false)
