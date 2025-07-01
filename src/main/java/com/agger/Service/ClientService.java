@@ -22,7 +22,7 @@ public class ClientService {
 
         Optional<Client> cpfExist = clientRepository.findByCpf(data.cpf());
 
-        if (cpfExist.isEmpty()) {
+        if (cpfExist.isPresent()) {
             throw new ClientException("Cpf do cliente ja existe na base");
         }
 
